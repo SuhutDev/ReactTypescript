@@ -7,7 +7,7 @@ const Coba001UseState = () => {
     <div>
       <div>001. UseState</div>
       <div>{level}</div>
-      <button onClick={() => setLevel(level + 1)}>Action</button>
+      <button onClick={() => setLevel(level + 1)}>Add Level</button>
     </div>
   );
 };

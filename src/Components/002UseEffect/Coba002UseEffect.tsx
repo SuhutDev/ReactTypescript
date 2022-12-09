@@ -41,7 +41,7 @@ const Coba002UseEffect = () => {
     <div>
       <div>002. UseEffect</div>
       <div>{level}</div>
-      <button onClick={() => setLevel(level + 1)}>Action</button>
+      <button onClick={() => setLevel(level + 1)}>Add Level</button>
     </div>
   );
 };
