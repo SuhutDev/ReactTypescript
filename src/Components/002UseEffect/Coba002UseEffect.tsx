@@ -5,7 +5,11 @@ const Coba002UseEffect = () => {
   const dataFetchedRef = useRef(false);
 
   useEffect(() => {
-    console.log("002.001 Dijalankan Setiap pergantian state");
+    console.log("002.001.001 Dijalankan Setiap pergantian state");
+    return () => {
+      console.log("002.001.002 Didestroy sesuai dengan dependencynya");
+      //biasanya digunakan untuk melepas event yg related ke suatu control html
+    };
   });
 
   useEffect(() => {
@@ -17,10 +21,20 @@ const Coba002UseEffect = () => {
     console.log(
       "002.002.002 Dijalakan ketika pertama kalo component diload; dikasih flag agar dijalankan sekali"
     );
+    //biasanya digunakan untuk melepas event yg related ke suatu control html
+
+    return () => {
+      console.log("002.002.003 Didestry sesuai dengan dependencynya");
+      //biasanya digunakan untuk melepas event yg related ke suatu control html
+    };
   }, []);
 
   useEffect(() => {
-    console.log("002.003 Dijalankan ketika state 'level' berubah");
+    console.log("002.003.001 Dijalankan ketika state 'level' berubah");
+
+    return () => {
+      console.log("002.003.002 Didestry sesuai dengan dependencynya");
+    };
   }, [level]);
 
   return (
