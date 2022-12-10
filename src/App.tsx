@@ -7,6 +7,7 @@ import Coba002UseEffect from "./Components/002UseEffect/Coba002UseEffect";
 import Coba003UseEffectCallApi from "./Components/003UseEffectCallApi/Coba003UseEffectCallApi";
 import Coba004UseRef from "./Components/004UseRef/Coba004UseRef";
 import Coba005UseMemo from "./Components/005UseMemo/Coba005UseMemo";
+import Coba006UseCallback from "./Components/006UseCallback/Coba006UseCallback";
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
       {/* <Coba002UseEffect /> */}
       {/* <Coba003UseEffectCallApi /> */}
       {/* <Coba004UseRef /> */}
-      <Coba005UseMemo />
+      {/* <Coba005UseMemo /> */}
+      <Coba006UseCallback />
     </div>
   );
 }
