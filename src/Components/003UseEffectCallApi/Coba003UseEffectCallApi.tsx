@@ -1,5 +1,4 @@
-import { type } from "@testing-library/user-event/dist/type";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 
 type postVm = {
   userId: number;
@@ -12,7 +11,6 @@ type postRes = postVm[];
 
 const Coba003UseEffectCallApi = () => {
   const [posts, setPosts] = useState([] as postRes);
-  const dataFetchedRef = useRef(false);
 
   useEffect(() => {
     const GetPosts = async () => {
@@ -27,12 +25,8 @@ const Coba003UseEffectCallApi = () => {
 
     //reactjs mengekskusi sebanyak 2 kali event ketika dependesi []
     //nah jika kita mengkondisikan callapi hanya bisa di panggil sekali kita bisa callapi di event petama atau kedua
-    if (dataFetchedRef.current) {
-      GetPosts();
-    } else {
-      dataFetchedRef.current = true;
-      //GetPosts();
-    }
+
+    GetPosts();
   }, []);
 
   return (

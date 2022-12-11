@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 
 const Coba002UseEffect = () => {
   const [level, setLevel] = useState(1 as number);
-  const dataFetchedRef = useRef(false);
 
   useEffect(() => {
     console.log("002.001.001 Dijalankan Setiap pergantian state");
@@ -13,13 +12,11 @@ const Coba002UseEffect = () => {
   });
 
   useEffect(() => {
+    //if react.StrictMode di enable maka ketika dev akan di eksekusi 2x
+    //tapi ketika di build hanya di jalankan sekali
+    //jadi tidak usah kuatir jika keliahtannya di jalankan 2x
     console.log(
       "002.002.001 Dijalakan ketika pertama kalo component diload; default akan di jalankan 2 kali"
-    );
-    if (dataFetchedRef.current) return;
-    dataFetchedRef.current = true;
-    console.log(
-      "002.002.002 Dijalakan ketika pertama kalo component diload; dikasih flag agar dijalankan sekali"
     );
     //biasanya digunakan untuk melepas event yg related ke suatu control html
 
