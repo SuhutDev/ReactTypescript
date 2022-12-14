@@ -10,6 +10,7 @@ import Coba005UseMemo from "./Components/005UseMemo/Coba005UseMemo";
 import Coba006UseCallback from "./Components/006UseCallback/Coba006UseCallback";
 import Coba007UseContext from "./Components/007UseContextAndUseReducer/Coba007UseContextAndUseReducer";
 import Coba008UseLayoutEffect from "./Components/008UseLayoutEffect/Coba008UseLayoutEffect";
+import Coba009UseImpetiveHandle from "./Components/009UseImperativeHandle/Coba009UseImperativeHandle";
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
       {/* <Coba005UseMemo /> */}
       {/* <Coba006UseCallback /> */}
       {/* <Coba007UseContext /> */}
-      <Coba008UseLayoutEffect />
+      {/* <Coba008UseLayoutEffect /> */}
+      <Coba009UseImpetiveHandle />
     </div>
   );
 }
