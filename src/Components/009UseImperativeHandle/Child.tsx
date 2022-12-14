@@ -1,19 +1,34 @@
-import React, { forwardRef, useImperativeHandle } from "react";
+import { forwardRef, useImperativeHandle } from "react";
 
-const Child = forwardRef((props: any, ref: any) => {
-  useImperativeHandle(ref, () => {
-    return {
-      handleMessage(message: string) {
-        alert("terima massage dari parent : " + message);
-      },
-    };
-  });
+export type ChildHandle = {
+  handleMessageChild: (message: string) => void;
+};
 
-  return (
-    <>
-      <div>Child</div>
-    </>
-  );
-});
+type ChildProps = {
+  handleMessageParent: (message: string) => void;
+};
+
+const Child = forwardRef<ChildHandle, ChildProps>(
+  (props: ChildProps, ref: any) => {
+    useImperativeHandle(ref, () => {
+      return {
+        handleMessageChild(message: string) {
+          alert("terima massage dari parent : " + message);
+        },
+      };
+    });
+
+    return (
+      <>
+        <div>Child</div>
+        <button
+          onClick={() => props.handleMessageParent("ini message dari child")}
+        >
+          Send value to parent
+        </button>
+      </>
+    );
+  }
+);
 
 export default Child;

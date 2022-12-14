@@ -1,4 +1,3 @@
-import React, { useState, useRef, useCallback, useEffect } from "react";
 import Parent from "./Parent";
 
 const Coba009UseImpetiveHandle = () => {
