@@ -19,15 +19,16 @@ export enum EProcess {
 }
 
 export enum EAction {
-  Save = "SAVE",
+  Add = "ADD",
 }
 
 export type TDataRes = {
+  Id: string;
   CustomerCode: string;
   CustomerName: string;
 };
 
-export type TSaveReq = {
+export type TAddReq = {
   CustomerCode: string;
   CustomerName: string;
 };

@@ -1,21 +1,34 @@
-import { EAction, EProcess, TAction, TDataRes, TSaveReq } from "./model";
+import { EAction, EProcess, TAction, TDataRes, TAddReq } from "./model";
 
-export const saveData = (
+export const addData = async (
   dispatch: React.Dispatch<TAction>,
-  request: TSaveReq
+  request: TAddReq
 ) => {
   dispatch({
-    type: EAction.Save,
+    type: EAction.Add,
     process: EProcess.Request,
   } as TAction);
 
   try {
-    setTimeout(() => {
-      console.log("post to api");
-    }, 2000);
+    console.log("post to api");
+
+    const delay = (ms: number) =>
+      new Promise((resolve) => setTimeout(resolve, ms));
+    await delay(3000);
+
+    dispatch({
+      type: EAction.Add,
+      process: EProcess.Received,
+      payload: {
+        Id: "generate by server",
+        CustomerCode: request.CustomerCode,
+        CustomerName: request.CustomerName,
+      },
+      errorMassage: "error",
+    } as TAction);
   } catch {
     dispatch({
-      type: EAction.Save,
+      type: EAction.Add,
       process: EProcess.Failed,
       errorMassage: "error",
     } as TAction);
